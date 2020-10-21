@@ -13,6 +13,7 @@ end
 
 def init_errors
   return puts 'No errors detected'.blue unless @total_errors != 0
+
   case @total_errors
   when 1
     puts "#{@total_errors} Error detected".red
@@ -35,7 +36,8 @@ def error_lines
 end
 
 def show_errors
-  return unless @total_errors > 0
+  return unless @total_errors.positive?
+
   @lines_to_use.each_with_index do |value, _index|
     puts "\nLine #{value} has the following errors".blue
     @error_arr.each_with_index do |_x, y|
@@ -56,10 +58,11 @@ def check_valid_file
     puts "#{filepath} #{text}".red
     filepath = gets.chomp.to_s
   end
-  filepath.eql?('b') ? '../bad.rb' : '../good.rb'
+  filepath.eql?('b') ? 'bad.rb' : 'good.rb'
 end
 
 puts 'Please choose file to test'.blue
+puts 'Make sure you run script from root'.blue
 puts 'Good (g) or Bad (b) test file'.blue
 filepath = check_valid_file
 puts "Checking file: #{filepath}\n".light_blue
