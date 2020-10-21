@@ -28,7 +28,7 @@ end
 def whitespace(line)
   text = 'Excess Whitespace Detected'
   return if @lines_empty.include?(line + 1)
-  
+
   pos = @file_to_check.lines[line].string.gsub(/ {2,}/).map { |_, _arr| Regexp.last_match.begin(0) }
   pos.shift if pos[0].nil? || pos[0].zero?
   @error_arr.push(lpos: line + 1, msg: text, offset: pos) unless pos[0].nil?
