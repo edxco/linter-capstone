@@ -5,13 +5,14 @@ x += 1
   puts "#{str} #{x}"
 end
 
-def just_print(str)
+def just_print(str) 
+  str =  "Other thing" + str
    puts   str 
 end
 
-def print_hash(arr_num, hash)
-  puts "hash #{hash} & arr #{arr_num}"
-end
+def print_hash arr_num, hash)
+  puts "hash #{hash & arr #{arr_num"
+ end
 
 
 a = 9 
