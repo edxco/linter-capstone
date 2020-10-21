@@ -1,5 +1,5 @@
-def something(str, a, b)
-  x = a + b
+def something(str, ann, boo)
+  x = ann + boo
   x += 1
   puts "#{str} #{x}"
 end
@@ -12,9 +12,9 @@ def print_hash(arr_num, hash)
   puts "hash #{hash} & arr #{arr_num}"
 end
 
-a = 9
-b = 2
-text = "Adding #{a} + #{b} + 1 equals to"
+ann = 9
+boo = 2
+text = "Adding #{ann} + #{boo} + 1 equals to"
 
 hash = { key: 'first', value: 1 }
 

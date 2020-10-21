@@ -28,6 +28,7 @@ end
 def whitespace(line)
   text = 'Excess Whitespace Detected'
   return if @lines_empty.include?(line + 1)
+  
   pos = @file_to_check.lines[line].string.gsub(/ {2,}/).map { |_, _arr| Regexp.last_match.begin(0) }
   pos.shift if pos[0].nil? || pos[0].zero?
   @error_arr.push(lpos: line + 1, msg: text, offset: pos) unless pos[0].nil?
@@ -36,8 +37,10 @@ end
 def trailing_whitespace(line)
   text = 'Trailing Whitespace Detected'
   return if @lines_empty.include?(line + 1)
+
   pointer = @file_to_check.lines[line].string.length
   return unless @file_to_check.lines[line].string.reverse[0..1].match?(/ {1,}/)
+
   @error_arr.push(lpos: line + 1, msg: text, offset: pointer)
 end
 
@@ -48,6 +51,7 @@ end
 
 def indentation(line)
   return if @lines_empty.include?(line + 1)
+
   text = 'Indentation Error Detected'
   pos = position_whitespace(line)
   test_end(line)
