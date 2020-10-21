@@ -10,8 +10,8 @@ def just_print(str)
    puts   str 
 end
 
-def print_hash arr_num, hash)
-  puts "hash #{hash & arr #{arr_num"
+def print_hash (arr_num, hash)
+  puts "hash #{hash} & arr #{arr_num}"
  end
 
 
