@@ -21,7 +21,7 @@ def init_errors
 end
 
 def show_punctuation
-  text = "\nChecking for {}, [] and ()"
+  text = "\nChecking for {}, [] and ()".light_blue
   puts text.blue unless @error_arr.empty? || @punctation_arr.empty?
   @punctation_arr.map { |hash| hash[:sign] }.each_with_index do |value, index|
     temp = @punctation_arr[index][:result].abs
@@ -44,8 +44,24 @@ def show_errors
   end
 end
 
-filepath = 'test.rb'
+def check_letter(filepath)
+  filepath.eql?('b') || filepath.eql?('g') ? false : true
+end
 
+def check_valid_file
+  text = 'not valid, please choose Good (g) or Bad (b) test file'
+  filepath = gets.chomp.to_s
+  while check_letter(filepath)
+    puts "#{filepath} #{text}".red
+    filepath = gets.chomp.to_s
+  end
+  filepath.eql?('b') ? 'bad.rb' : 'good.rb'
+end
+
+puts 'Please choose file to test'.blue
+puts 'Good (g) or Bad (b) test file'.blue
+filepath = check_valid_file
+puts "Checking file: #{filepath}\n".light_blue
 check_error(filepath)
 unify_errors
 init_errors
