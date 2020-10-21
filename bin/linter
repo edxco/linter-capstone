@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'strscan'
 require_relative '../lib/file_read.rb'
 require_relative '../lib/errors.rb'
@@ -55,7 +56,7 @@ def check_valid_file
     puts "#{filepath} #{text}".red
     filepath = gets.chomp.to_s
   end
-  filepath.eql?('b') ? 'bad.rb' : 'good.rb'
+  filepath.eql?('b') ? '../bad.rb' : '../good.rb'
 end
 
 puts 'Please choose file to test'.blue
