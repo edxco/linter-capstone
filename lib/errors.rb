@@ -1,7 +1,6 @@
 require 'strscan'
 require_relative 'file_read.rb'
 require_relative 'colors.rb'
-# rubocop:disable Metrics/LineLength
 def check_error(filepath)
   @file_to_check = LintFile.new(filepath)
   @file_to_check.read
@@ -26,7 +25,6 @@ def check_loop
   tags_results
 end
 
-# rubocop:disable Metrics/AbcSize
 def whitespace(line)
   text = 'Excess Whitespace Detected'
   return if @lines_empty.include?(line + 1)
@@ -55,9 +53,7 @@ def indentation(line)
   text = 'Indentation Error Detected'
   pos = position_whitespace(line)
   test_end(line)
-  if pos[0] != @pos_white
-    @error_arr.push(lpos: line + 1, msg: text, offset: pos[0])
-  end
+  @error_arr.push(lpos: line + 1, msg: text, offset: pos[0]) if pos[0] != @pos_white
   test_def(line)
 end
 
