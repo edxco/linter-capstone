@@ -42,15 +42,33 @@ In the live view you can:
 ![Example1](screenshot/ex5.png)
 ![Example1](screenshot/ex6.png)
 
-## Linting Locally
+## Getting started
 
-**Step 1**: With your terminal in the cloned directory type the following command:
+To get your own copy of this project simply clone the repository to your local machine. For instructions on how to run this linter live, skip to the Repl.It instructions below and then click on the Repl.It badge.
+
+**Step 1**: Type the following command into a git shell
+
+<code>git clone <https://github.com/edxco/linter-capstone.git></code>
+
+**Step 2**: Direct a terminal into the directory of the cloned repository by typing:
+
+<code>cd linter-capstone</code>
+
+**Step 3**: With your terminal in the cloned directory type the following command:
 
 <code>ruby ./bin/linter</code>
 
-**Step 2**: When prompted, choose between any of the to examples that ask for
+**Step 4**: When prompted, choose between any of the to examples that ask for
 
-**Setp 3**: If you need to test a file you can change bad.rb or good.rb, save it and repeat step 1
+**Setp 5**: If you need to test a file you can change bad.rb or good.rb, save it and repeat step 3
+
+## To Test with Rspec
+
+**Step 1**: Direct a local terminal to the cloned repository.
+
+**Step 2**: Enter the following command:
+
+<code> rspec ./spec/linter_tester.rb </code>
 
 ## Authors
 
@@ -59,3 +77,13 @@ In the live view you can:
 - GitHub: [@githubhandle](https://github.com/edxco/)
 - Twitter: [@twitterhandle](https://twitter.com/lalo_nbc/)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/eduardo-n-baeza/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!

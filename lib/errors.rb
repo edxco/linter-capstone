@@ -1,6 +1,7 @@
 require 'strscan'
 require_relative 'file_read.rb'
 require_relative 'colors.rb'
+
 def check_error(filepath)
   @file_to_check = LintFile.new(filepath)
   @file_to_check.read

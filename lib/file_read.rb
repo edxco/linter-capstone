@@ -1,5 +1,4 @@
 require 'strscan'
-require_relative 'colors.rb'
 
 # Read & scan every line of the file
 class LintFile
