@@ -17,7 +17,7 @@ def print_hash (arr_num, hash)
 
 a = 9 
 b = 2
-text = "Adding #{a} + #{b} + 1 equals to"
+text = "Adding #{a} + #{b + 1}"
 
 hash = {:key=>"first", :value=>1}
 
