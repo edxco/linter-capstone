@@ -19,7 +19,7 @@ Linter checks the following rules and the offset of each one:
  - Missing parentesis open or close*.
  - Missing curly brackets open or close*.
 
-It will not check whether if the close or open for each bracket, curly bracket or parenthesis are close in order.
+* It will not check whether if the close or open for each bracket, curly bracket or parenthesis are close in order.
 
 ## Repl
 
@@ -85,7 +85,7 @@ gem 'strscan'</code>
 
 **Step 2**: Go to the root of the repository and enter the following command:
 
-<code> rspec spec/* -fd</code>
+<code> rspec</code>
 
 ## Authors
 
