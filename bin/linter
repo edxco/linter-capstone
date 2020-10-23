@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+require 'strscan'
+require_relative '../lib/file_read.rb'
+require_relative '../lib/errors.rb'
+require_relative '../lib/colors.rb'
+require_relative '../lib/show_error.rb'
+
+puts 'Please choose file to test'.blue
+puts 'Make sure you run script from root'.blue
+puts 'Good (g) or Bad (b) test file'.blue
+filepath = check_valid_file
+puts "Checking file: #{filepath}\n".light_blue
+check_error(filepath)
+unify_errors
+puts init_errors
+error_lines
+
+unless @total_errors.zero?
+
+  @lines_to_use.each_with_index do |value, _index|
+    puts "\nLine #{value} has the following errors".blue
+    @error_arr.each_with_index do |_x, y|
+      txt = "#{@error_arr[y][:msg]} on col #{@error_arr[y][:offset]}"
+      puts txt if @error_arr[y][:lpos] == value
+    end
+  end
+end
+
+puts show_punctuation

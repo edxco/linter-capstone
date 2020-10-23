@@ -1,0 +1,3 @@
+run="./bin/linter"
+language="ruby"
+onBoot="echo Booting up!"
