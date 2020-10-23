@@ -26,6 +26,8 @@ def check_loop
   tags_results
 end
 
+private
+
 def whitespace(line)
   text = 'Excess Whitespace Detected'
   return if @lines_empty.include?(line + 1)
@@ -58,6 +60,7 @@ def indentation(line)
   test_end(line)
   @error_arr.push(lpos: line + 1, msg: text, offset: pos[0]) if pos[0] != @pos_white
   test_def(line)
+  @error_arr
 end
 
 def test_def(line)

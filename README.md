@@ -15,9 +15,11 @@ Linter checks the following rules and the offset of each one:
 
  The following rules also check the number of times that a:
 
- - Missing brackets open or close.
- - Missing parentesis open or close.
- - Missing curly brackets open or close.
+ - Missing brackets open or close*.
+ - Missing parentesis open or close*.
+ - Missing curly brackets open or close*.
+
+It will not check whether if the close or open for each bracket, curly bracket or parenthesis are close in order.
 
 ## Repl
 
@@ -54,21 +56,36 @@ To get your own copy of this project simply clone the repository to your local m
 
 <code>cd linter-capstone</code>
 
-**Step 3**: With your terminal in the cloned directory type the following command:
+### With your terminal in the cloned directory:
+
+**Step 3**: Install the current stable version of Ruby:
+
+<code>$ ruby-install ruby</code>
+
+**Step 4**: Add this lines to your application's Gemfile:
+
+<code>gem 'rspec'
+gem 'strscan'</code>
+
+**Step 5**: And then execute:
+
+<code>$ bundle install</code>
+
+**Step 6**:  type the following command:
 
 <code>ruby ./bin/linter</code>
 
-**Step 4**: When prompted, choose between any of the to examples that ask for
+**Step 7**: When prompted, choose between any of the to examples that ask for
 
-**Setp 5**: If you need to test a file you can change bad.rb or good.rb, save it and repeat step 3
+**Setp 8**: If you need to test a file you can change bad.rb or good.rb, save it and repeat step 3
 
 ## To Test with Rspec
 
 **Step 1**: Direct a local terminal to the cloned repository.
 
-**Step 2**: Enter the following command:
+**Step 2**: Go to the root of the repository and enter the following command:
 
-<code> rspec ./spec/linter_tester.rb </code>
+<code> rspec spec/* -fd</code>
 
 ## Authors
 

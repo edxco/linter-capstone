@@ -54,16 +54,30 @@ describe LintFile do
   end
 
   describe 'Whitespace trailing #trailing_whitespace' do
-    it 'Second line (index = 1) has no indentation' do
+    it 'Second line (index = 1) has a whitespace at the end of the line' do
       check_error(original)
       expect(
-        trailing_whitespace(1).include?({ lpos: 2, msg: 'Indentation Error Detected', offset: 0 })
-      ).not_to eql(true)
+        trailing_whitespace(1).include?({ lpos: 4, msg: 'Indentation Error Detected', offset: 0 })
+      ).to eql(true)
     end
 
     it 'There is one Indentation error on line (lpos) 4 ' do
       check_error(original)
       expect(@error_arr.include?({ lpos: 4, msg: 'Indentation Error Detected', offset: 0 })).to eql(true)
+    end
+  end
+
+  describe 'Check if all tags open are closed' do
+    it 'If curly brace close is missing it returns the sign and the number of punctuation missing' do
+      @tags = ['(', [')', '{']]
+      @punctation_arr = []
+      expect(tags_results).to eql([{ msg: 'to close', result: 1, sign: 'Curly {}' }])
+    end
+
+    it 'Same tags open as close' do
+      @tags = ['(', [')', '{'], '}']
+      @punctation_arr = []
+      expect(@punctation_arr.count != 0).not_to eql(true)
     end
   end
 end
